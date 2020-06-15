@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a98ddc7e-befb-4566-a93e-9e7f63a7b55f">
+	<property name="ireport.zoom" value="1.4641000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     tbdataalat.`idalat` AS tbdataalat_idalat,
+     tbdataalat.`kode_alat` AS tbdataalat_kode_alat,
+     tbdataalat.`nama_alat` AS tbdataalat_nama_alat,
+     tbdataalat.`satuan` AS tbdataalat_satuan,
+     tbdataalat.`jumlah_stok` AS tbdataalat_jumlah_stok,
+     tbdataalat.`denda` AS tbdataalat_denda
+FROM
+     `tbdataalat` tbdataalat]]>
+	</queryString>
+	<field name="tbdataalat_idalat" class="java.lang.Integer"/>
+	<field name="tbdataalat_kode_alat" class="java.lang.String"/>
+	<field name="tbdataalat_nama_alat" class="java.lang.String"/>
+	<field name="tbdataalat_satuan" class="java.lang.String"/>
+	<field name="tbdataalat_jumlah_stok" class="java.lang.Integer"/>
+	<field name="tbdataalat_denda" class="java.lang.Integer"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<staticText>
+				<reportElement x="0" y="0" width="552" height="72" uuid="a29440b5-9c4e-420a-bb9b-ff22d1196573"/>
+				<textElement textAlignment="Center">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SISTEM MANAJEMEN LABORATORIUM KOMPUTER]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="71" width="555" height="1" uuid="31821204-9a9b-4b0b-87cf-44c5bb9237f7"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="52">
+			<staticText>
+				<reportElement x="0" y="2" width="100" height="20" uuid="52dafda4-1c4c-47cc-be30-6dc451bf3c32"/>
+				<text><![CDATA[Nama Laboran:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="345" y="2" width="100" height="20" uuid="6bff757d-f3a7-4fc4-adff-431e44360d00"/>
+				<text><![CDATA[Tanggal: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="2" width="100" height="20" uuid="92469920-7540-4108-837d-bd3daa4fd9b6"/>
+				<text><![CDATA[Nama x]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="230" y="31" width="100" height="20" uuid="fa21331b-d95d-4125-8882-d612860b132f"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="51" width="555" height="1" uuid="5b615e21-02e2-49a6-8a5f-5d24b4ea1d87"/>
+			</line>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="389" y="2" width="100" height="13" uuid="ec6a7dad-3cb5-4a26-8dd6-17056ab4bbf0"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="2b338621-9a25-4a91-add3-bc848d566872"/>
+				<text><![CDATA[Kode Alat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="123" y="0" width="100" height="20" uuid="5a053561-9758-4828-b22d-afe1376f4e47"/>
+				<text><![CDATA[Nama Alat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="238" y="0" width="100" height="20" uuid="c9cd09ef-fe1f-4ead-b18c-2866cae0221a"/>
+				<text><![CDATA[Satuan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="353" y="0" width="100" height="20" uuid="95e3012f-d7a2-45b8-99af-d5297f23aa33"/>
+				<text><![CDATA[Jumlah Stok]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="460" y="0" width="95" height="20" uuid="799f5958-51fc-4ed4-9153-01c617884093"/>
+				<text><![CDATA[Denda]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="34">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="92" height="20" uuid="d551734e-8763-4605-ab61-6d2f9fd51b82"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbdataalat_kode_alat}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="123" y="0" width="92" height="20" uuid="b1c864e8-2563-4146-ad1f-ec49107f4ed6"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbdataalat_nama_alat}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="238" y="0" width="92" height="20" uuid="7f17a372-0c7c-4754-bd67-b9cae2af70d0"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbdataalat_satuan}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="353" y="0" width="92" height="20" uuid="78c7f112-0bfc-435b-91dc-a430a6ea3b02"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbdataalat_jumlah_stok}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="460" y="0" width="92" height="20" uuid="9a3fc072-55fd-4a96-8aaf-3fd9b8535139"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbdataalat_denda}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" uuid="cd5144e9-5609-4241-bc95-275dec90c99c"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="34ec9b20-2bd5-4f22-93c9-3b3d09aec793"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="294c1382-b975-451e-960c-62eee9f8335f"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="e8729406-4a40-448c-8f00-16ad6304e99a"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
